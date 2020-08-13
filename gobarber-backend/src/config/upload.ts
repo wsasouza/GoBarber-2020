@@ -12,14 +12,14 @@ interface IUploadConfig {
 
   multer: {
     storage: StorageEngine;
-  }
+  };
 
   config: {
     disk: {};
     aws: {
-      bucket: string,
-    }
-  }
+      bucket: string;
+    };
+  };
 }
 
 export default {
@@ -35,7 +35,7 @@ export default {
         const fileHash = crypto.randomBytes(10).toString('HEX');
         const fileName = `${fileHash}-${file.originalname}`;
 
-      return callback(null, fileName);
+        return callback(null, fileName);
       },
     }),
   },
@@ -44,6 +44,6 @@ export default {
     disk: {},
     aws: {
       bucket: 'app-gobarber-wsasouza',
-    }
-  }
+    },
+  },
 } as IUploadConfig;
